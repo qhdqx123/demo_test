@@ -1,0 +1,41 @@
+webpackHotUpdate("static\\development\\pages\\index.js",{
+
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+var _jsxFileName = "E:\\demo_test\\hello-next\\pages\\index.js";
+
+//1 
+// import Layout from '../components/MyLayout'
+// const Index = () => (
+//     <Layout>
+//         <p>hello Next.js</p>
+//     </Layout>
+// );
+// export default Index
+//2
+
+
+var Page = function Page() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "hello Next.js");
+};
+
+/***/ })
+
+})
+//# sourceMappingURL=index.js.c96a44ecb4161bb0f3a8.hot-update.js.map

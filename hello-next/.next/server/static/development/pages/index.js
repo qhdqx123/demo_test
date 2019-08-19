@@ -172,24 +172,43 @@ const layoutStyle = {
   margin: 20,
   padding: 20,
   border: '1px solid #DDD'
-};
+}; // 定义组件的方式
+
+1;
 
 const Layout = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   style: layoutStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 12
   },
   __self: undefined
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 13
   },
   __self: undefined
 }), props.children);
 
-/* harmony default export */ __webpack_exports__["default"] = (Layout);
+/* harmony default export */ __webpack_exports__["default"] = (Layout); // 2
+// const withLayout = Page =>{
+//     return () => (
+//         <div style={layoutStyle}>
+//             <Header/>
+//             <Page/>
+//         </div>
+//     )
+// }
+// export default withLayout
+// 3
+// const layout = props => (
+//     <div style={layoutStyle}>
+//         <Header/>
+//         {props.content}
+//     </div>
+// )
+// export default layout
 
 /***/ }),
 
@@ -866,28 +885,99 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blog; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "E:\\demo_test\\hello-next\\pages\\index.js";
 
+//1 
+// import Layout from '../components/MyLayout'
+// const Index = () => (
+//     <Layout>
+//         <p>hello Next.js</p>
+//     </Layout>
+// );
+// export default Index
+//2
+// import withLayout from '../components/MyLayout'
+// const Page = ()=> <p>hello Next.js</p>
+// export default withLayout(Page)
+// 3
+// import Layout from '../components/MyLayout'
+// const indexPageContent = <p>hello Next.js</p>
+// export default function Index() {
+//     return <Layout content={indexPageContent}></Layout>
+// }
+// blog demo
 
 
-const Index = () => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+
+const PostLink = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 4
+    lineNumber: 34
   },
   __self: undefined
-}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  href: `/post?title=${props.title}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 5
+    lineNumber: 35
   },
   __self: undefined
-}, "hello Next.js"));
+}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 36
+  },
+  __self: undefined
+}, props.title)));
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+function Blog() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: this
+  }, "My Blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
+    title: "Hello Next.js",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
+    title: "Learn Next.js is awesome",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
+    title: "Deploy apps with Zeit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  })));
+}
 
 /***/ }),
 
