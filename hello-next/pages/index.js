@@ -53,27 +53,52 @@
 
 
 // dynamic routing
-import Layout from '../components/MyLayout'
-import Link from 'next/link'
+// import Layout from '../components/MyLayout'
+// import Link from 'next/link'
 
-const PostLink = props =>(
-    <li>
-        <Link href="/p/[id]" as={`/p/${props.id}`}>
-            <a>{props.id}</a>
-        </Link>
-    </li>
+// const PostLink = props =>(
+//     <li>
+//         <Link href="/p/[id]" as={`/p/${props.id}`}>
+//             <a>{props.id}</a>
+//         </Link>
+//     </li>
+// )
+// export default function Blog() {
+//     return (
+//         <Layout>
+//             <h1>my Blob</h1>
+//             <ul>
+//                 <PostLink id="hello-nextjs" />
+//                 <PostLink id="learn-nextjs" />
+//                 <PostLink id="deploy-nextjs" />
+//             </ul>
+//         </Layout>
+//     )
+// }
+
+
+// fetch data
+import Layout from '../components/MyLayout'
+import Link from  'next/link'
+import fetch from 'isomorphic-unfetch'
+
+const Post = props=>(
+    <Layout>
+        <h1>{props.show.name}</h1>
+        {/* <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p> */}
+        {/* <img src={props.show.image.medium} /> */}
+    </Layout>
 )
 
-
-export default function Blog() {
-    return (
-        <Layout>
-            <h1>my Blob</h1>
-            <ul>
-                <PostLink id="hello-nextjs" />
-                <PostLink id="learn-nextjs" />
-                <PostLink id="deploy-nextjs" />
-            </ul>
-        </Layout>
-    )
+Post.getInitialProps = async function(context){
+    const { id } = context.query;
+    const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
+    const show = await res.json();
+    console.log(show, 'ddee')
+    console.log(`Fetched show: ${show.name}`);
+  
+    return { show };
 }
+
+
+export default Post;
