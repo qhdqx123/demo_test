@@ -912,68 +912,91 @@ var _jsxFileName = "E:\\demo_test\\hello-next\\pages\\index.js";
 //     return <Layout content={indexPageContent}></Layout>
 // }
 // blog demo
+// import Layout from '../components/MyLayout'
+// import Link from 'next/link'
+// const PostLink = props =>(
+//     <li>
+//         <Link href={`/post?title=${props.title}`}>
+//             <a>{props.title}</a>
+//         </Link>
+//     </li>
+// )
+// export default function Blog() {
+//     return (
+//         <Layout>
+//             <h1>My Blog</h1>
+//             <ul>
+//                 <PostLink title="Hello Next.js" />
+//                 <PostLink title="Learn Next.js is awesome" />
+//                 <PostLink title="Deploy apps with Zeit" />
+//             </ul>
+//         </Layout>
+//     )
+// }
+// dynamic routing
 
 
 
 const PostLink = props => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 34
+    lineNumber: 60
   },
   __self: undefined
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-  href: `/post?title=${props.title}`,
+  href: "/p/[id]",
+  as: `/p/${props.id}`,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 35
+    lineNumber: 61
   },
   __self: undefined
 }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 36
+    lineNumber: 62
   },
   __self: undefined
-}, props.title)));
+}, props.id)));
 
 function Blog() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 70
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 71
     },
     __self: this
-  }, "My Blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, "my Blob"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 72
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
-    title: "Hello Next.js",
+    id: "hello-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 73
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
-    title: "Learn Next.js is awesome",
+    id: "learn-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 74
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostLink, {
-    title: "Deploy apps with Zeit",
+    id: "deploy-nextjs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 75
     },
     __self: this
   })));
