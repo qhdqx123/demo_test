@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>“可扩展的 webpack 配置”是指，可重用并且可以与其他配置组合使用。这是一种流行的技术，
+        用于将关注点(concern)从环境(environment)、构建目标(build target)、运行时(runtime)中分离。
+        然后使用专门的工具（如 webpack-merge）将它们合并。 </p>
+    
+    <script>
+        // 伪代码 了解概念
+        const webpack = require('webpack')
+
+        webpack({
+        // 配置对象
+        }, (err, stats) => {
+        if (err || stats.hasErrors()) {
+            // 在这里处理错误
+        }
+        // 处理完成
+        });
+
+        
+        const compiler = webpack({
+        // 配置对象
+        })
+        
+        compiler.run((err, stats)=>{
+
+        })
+
+        const watching = compiler.watch({
+            aggregateTimeout: 300,
+            poll: undefined
+        },(err, stats)=>{
+            console.log(stats);
+        })
+
+        watching.close(() => {
+            console.log("Watching Ended.");
+        });
+
+    </script>
+</body>
+</html>
