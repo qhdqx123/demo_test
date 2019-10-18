@@ -1,3 +1,7 @@
+var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 const config = {
     entry: {
 
@@ -14,5 +18,36 @@ const config = {
         publicPath: '/assets/', //string function
         // This option specifies the public URL of the output directory when referenced in a browser. 
         // webpack-dev-server 也会默认从 publicPath 为基准，使用它来决定在哪个目录下启用服务，来访问 webpack 输出的文件。
+    },
+    modules: {
+        rules: [
+            {
+                
+            }
+        ]
+    },
+    resolve: {   //配置模块如何解析
+        alias: {   //object
+            Utilities: path.resolve(__dirname, 'src/utilities/'),
+            Templates: path.resolve(__dirname, 'src/templates/')
+        },
+        aliasField: ["browser"], //string
+        extensions: ['.js','.json'], // array 文件后缀
+        mainFields: ["browser", "module", "main"], //array
+        mainFiles: ["index"], //array 解析目录时要使用的文件名。
+        modules: ["node_modules"], // 告诉 webpack 解析模块时应该搜索的目录。 [path.resolve(__dirname, 'src'), 'node_modules']
+        plugins: [], 
+    },
+    plugins:[
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': 'production'
+        }),
+        new ExtractTextPlugin({
+            filename: 'build.min.css',
+            allChunks: true,
+        })
+    ],
+    externals: {
+        react: 'react'
     }
 }
