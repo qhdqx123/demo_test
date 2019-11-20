@@ -685,7 +685,7 @@ class Head extends _react.Component {
 
     return _react.default.createElement("head", this.props, children, head, _react.default.createElement("meta", {
       name: "next-head-count",
-      content: _react.default.Children.count(head || []).toString()
+      content: _react.default.Children.counter(head || []).toString()
     }), inAmpMode && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("meta", {
       name: "viewport",
       content: "width=device-width,minimum-scale=1,initial-scale=1"

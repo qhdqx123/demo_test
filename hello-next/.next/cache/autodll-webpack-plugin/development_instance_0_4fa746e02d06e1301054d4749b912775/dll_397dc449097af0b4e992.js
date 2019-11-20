@@ -12893,7 +12893,7 @@ var currentlyProcessingQueue = void 0;
 {
   didWarnUpdateInsideUpdate = false;
   currentlyProcessingQueue = null;
-  
+
 }
 
 function createUpdateQueue(baseState) {
@@ -16745,7 +16745,7 @@ function insertNonHydratedInstance(returnFiber, fiber) {
               didNotFindHydratableContainerTextInstance(parentContainer, text);
               break;
             case SuspenseComponent:
-              
+
               break;
           }
           break;
@@ -26813,7 +26813,7 @@ function forEachSingleChild(bookKeeping, child, name) {
   var func = bookKeeping.func,
       context = bookKeeping.context;
 
-  func.call(context, child, bookKeeping.count++);
+  func.call(context, child, bookKeeping.counter++);
 }
 
 /**
@@ -26844,7 +26844,7 @@ function mapSingleChildIntoContext(bookKeeping, child, childKey) {
       context = bookKeeping.context;
 
 
-  var mappedChild = func.call(context, child, bookKeeping.count++);
+  var mappedChild = func.call(context, child, bookKeeping.counter++);
   if (Array.isArray(mappedChild)) {
     mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, function (c) {
       return c;
